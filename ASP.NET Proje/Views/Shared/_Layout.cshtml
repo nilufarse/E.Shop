@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ASP.NET Proje</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/template/dashboard.css" rel="stylesheet" />
+    <link href="~/template/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+            <div class="col-12 ">
+                <main role="main">
+                    <div class="container-fluid align-items-md-center">
+                        @RenderBody()
+                    </div>
+
+                </main>
+            </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/feather-icons/feather.min.js"></script>
+    <script src="~/lib/Chart.js/chart.min.js"></script>
+    <script src="~/template/dashboard.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

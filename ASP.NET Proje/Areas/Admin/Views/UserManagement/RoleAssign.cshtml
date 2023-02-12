@@ -1,0 +1,34 @@
+﻿@model UserRoleViewModel
+
+@{ ViewData["Title"] = "RoleAssign"; }
+
+<div class="container p-5">
+    <h2 class="text-light">Role Assign</h2>
+    <div class="form-group">
+        <form method="post" asp-action="RoleAssign">
+            <input hidden asp-for="userId" />
+            <div class="form-group">
+                <label class="form-control">UserId</label>
+                <input required asp-for="userId" class="form-control text-white" />
+            </div>
+            <div class="form-group">
+                <label class="form-control">EmployeeFullName</label>
+                <input required asp-for="employeeFullName" class="form-control text-white" />
+            </div>
+            <div class="form-group">
+                <label class="form-control">RoleName</label>
+                <select class="form-control" asp-for="roleName" asp-items="ViewBag.Role"></select>
+            </div>
+            <input class="btn btn-outline-light" type="submit" value="Role Assign" />
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

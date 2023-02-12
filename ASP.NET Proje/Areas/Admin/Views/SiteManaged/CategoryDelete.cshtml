@@ -1,0 +1,20 @@
+﻿@model Category
+@{
+    Layout = "_Layout";
+}
+
+<div class="container p-5">
+    <h2 class="text-light">Delete Category</h2>
+
+
+    <div class="form-group">
+        <form method="post" asp-action="CategoryDelete">
+            <div class="form-group">
+                <label class="form-control">Name</label>
+                <input readonly required asp-for="Name" class="form-control text-white" />
+            </div>
+            <input class="btn btn-outline-light" type="submit" value="Delete" />
+        </form>
+    </div>
+
+</div>

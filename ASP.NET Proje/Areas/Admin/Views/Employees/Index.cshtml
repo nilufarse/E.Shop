@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ASP.NET_Proje.Models.Entity.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+<div class="col-lg-12 grid-margin stretch-card services">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Employee</h4>
+            <p class="card-description">
+                <code> <a class="btn btn-light" asp-action="Create">Create Employee</a></code>
+            </p>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>SurName</th>
+                            <th>StartDate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.SurName</td>
+                            <td>@item.StartDate</td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Details</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Delete</a>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

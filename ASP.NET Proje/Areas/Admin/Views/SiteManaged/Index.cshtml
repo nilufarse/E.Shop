@@ -1,0 +1,271 @@
+﻿@model DataViewModel
+@{
+    Layout = "_Layout";
+}
+@section addcss{
+    @if (Model.Categorys.Count() > 6)
+    {
+        <style>
+            .stretch-card.services {
+                overflow-y: scroll;
+                height: 70vh;
+                background-color: #191c24;  
+            }
+        </style>
+    }
+        @if (Model.Products.Count() > 6)
+    {
+        <style>
+
+            .stretch-card.services {
+                overflow-y: scroll;
+                height: 70vh;
+                background-color: #191c24;  
+            }
+        </style>
+    }
+}
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_navbar.html -->
+        <nav class="navbar p-0 fixed-top d-flex flex-row">
+            <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item dropdown d-none d-lg-block">
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
+                            <h6 class="p-3 mb-0">Projects</h6>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-item-content">
+                                    <p class="preview-subject ellipsis mb-1">Software Development</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-item-content">
+                                    <p class="preview-subject ellipsis mb-1">UI Development</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-item-content">
+                                    <p class="preview-subject ellipsis mb-1">Software Testing</p>
+                                </div>
+                            </a>
+                            <p class="p-3 mb-0 text-center">See all projects</p>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown border-left">
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+                            <h6 class="p-3 mb-0">Messages</h6>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <img src="../../adminAssets/images/faces/face4.jpg" alt="image" class="rounded-circle profile-pic">
+                                </div>
+                                <div class="preview-item-content">
+                                    <p class="preview-subject ellipsis mb-1">Mark send you a message</p>
+                                    <p class="text-muted mb-0"> 1 Minutes ago </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <img src="../../adminAssets/images/faces/face2.jpg" alt="image" class="rounded-circle profile-pic">
+                                </div>
+                                <div class="preview-item-content">
+                                    <p class="preview-subject ellipsis mb-1">Cregh send you a message</p>
+                                    <p class="text-muted mb-0"> 15 Minutes ago </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <img src="../../adminAssets/images/faces/face3.jpg" alt="image" class="rounded-circle profile-pic">
+                                </div>
+                                <div class="preview-item-content">
+                                    <p class="preview-subject ellipsis mb-1">Profile picture updated</p>
+                                    <p class="text-muted mb-0"> 18 Minutes ago </p>
+                                </div>
+                            </a>
+                            <p class="p-3 mb-0 text-center">4 new messages</p>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown border-left">
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                            <h6 class="p-3 mb-0">Notifications</h6>
+                            <a class="dropdown-item preview-item">                  
+                                <div class="preview-item-content">
+                                    <p class="preview-subject mb-1">Event today</p>
+                                    <p class="text-muted ellipsis mb-0"> Just a reminder that you have an event today </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-item-content">
+                                    <p class="preview-subject mb-1">Settings</p>
+                                    <p class="text-muted ellipsis mb-0"> Update dashboard </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-item-content">
+                                    <p class="preview-subject mb-1">Launch Admin</p>
+                                    <p class="text-muted ellipsis mb-0"> New admin wow! </p>
+                                </div>
+                            </a>
+                            <p class="p-3 mb-0 text-center">See all notifications</p>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
+                            <h6 class="p-3 mb-0">Profile</h6>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-item-content">
+                                    <p class="preview-subject mb-1">Settings</p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-item-content">
+                                    <p class="preview-subject mb-1">Log out</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <p class="p-3 mb-0 text-center">Advanced settings</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <h3 class="page-title"> Basic Tables </h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 grid-margin stretch-card services">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Categorys</h4>
+                                <p class="card-description">
+                                    Add Category <code> <a class="btn btn-light" asp-action="CategoryAdd">Create Category</a></code>
+                                </p>
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Name</th>
+                                                <th>CreatedDate</th>
+                                                <th>UpdatedDate</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.Categorys)
+                                            {
+                                                <tr>
+                                                    <td>@item.Id</td>
+                                                    <td>@item.Name</td>
+                                                    <td class="text-danger">@item.CreatedDate.Value.ToString("dd/MM/yyyy")</td>
+                                                    <td>
+                                                        <a asp-action="CategoryDetail" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Detail</a>
+                                                        <a asp-action="CategoryUpdate" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Update</a>
+                                                        <a asp-action="CategoryDelete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 grid-margin stretch-card services">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Product</h4>
+                                <p class="card-description">
+                                    Add Product <code> <a class="btn btn-light" asp-action="ProductAdd">Create Product</a></code>
+                                </p>
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Image</th>
+                                                <th>Name</th>
+                                                <th>Price</th>
+                                                <th>CreatedDate</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.Products)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        <img src="~/assets/img/@item.ImagePath" width="200" height="200">
+                                                    </td>
+                                                    <td>@item.Name</td>
+                                                    <td>@item.Price</td>
+                                                    <td class="text-danger">@item.CreatedDate.Value.ToString("dd/MM/yyyy")</td>
+                                                    <td>
+                                                        <a asp-action="ProductUpdate" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Update</a>
+                                                        <a asp-action="ProductDelete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 grid-margin stretch-card country">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Campaign</h4>
+                                <p class="card-description">
+                                    Add Campaign <code> <a class="btn btn-light" asp-action="CampaignAdd">Create Campaign</a></code>
+                                </p>
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Discount</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.Campaigns)
+                                            {
+                                                <tr>
+                                                    <td>@item.Name</td>
+                                                    <td>@item.Discount%</td>
+                                                    <td class="text-danger">@item.Description</td>
+                                                    <td>
+                                                        <a asp-action="CampaignDetail" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Detail</a>
+                                                        <a asp-action="CampaignUpdate" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Update</a>
+                                                        <a asp-action="CampaignDelete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:../../partials/_footer.html -->
+            <footer class="footer">
+                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
+                </div>
+            </footer>
+            <!-- partial -->
+        </div>
+    <!-- main-panel ends -->
+</div>
+
+

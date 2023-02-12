@@ -1,0 +1,45 @@
+﻿@model List<UserManagmentViewModel>
+@{
+    ViewData["Title"] = "EmplyoeeIndex";
+}
+
+<div class="col-lg-12 grid-margin stretch-card services">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Employee User</h4>
+            <p class="card-description">
+                <code> <a class="btn btn-light" asp-action="EmployeeUserCreate">Create Employee</a></code>
+            </p>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>UserName</th>
+                            <th>Email</th>
+                            <th>FullName</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <th>@item.UserId</th>
+                            <td>@item.UserName</td>
+                            <td>@item.Email</td>
+                            <td>@item.FullName</td>
+                            <td><a asp-action="RoleAssign" asp-route-id="@item.UserId" class="btn btn-sm btn-warning">Role Assign</a></td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.UserId" class="btn btn-sm btn-warning">Edit</a>
+                                <a asp-action="Details" asp-route-id="@item.UserId" class="btn btn-sm btn-warning">Details</a>
+                                <a asp-action="Delete" asp-route-id="@item.UserId" class="btn btn-sm btn-warning">Delete</a>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

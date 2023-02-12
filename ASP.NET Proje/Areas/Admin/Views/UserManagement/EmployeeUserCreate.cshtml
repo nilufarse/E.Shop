@@ -1,0 +1,33 @@
+﻿@model ASP.NET_Proje.Areas.Admin.ViewModel.UserManagmentViewModel
+
+@{
+    ViewData["Title"] = "User create for Employee";
+}
+
+        <div class="container p-5">
+            <h2 class="text-light">User Create</h2>
+            <div class="form-group">
+                <form method="post" asp-action="EmployeeUserCreate">
+                    <div class="form-group">
+                        <label class="form-control">UserName</label>
+                        <input required asp-for="UserName" class="form-control text-white" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control">Email</label>
+                        <input required asp-for="Email" class="form-control text-white" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control">Password</label>
+                        <input type="password" class="form-control text-white" asp-for="Password">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control">Employee</label>
+                        <select class="form-control" asp-for="EmployeeId" asp-items="Model.Employees"></select>
+                    </div>
+                    <input class="btn btn-outline-light" type="submit" value="Save" />
+                </form>
+            </div>
+        </div>
+
+
+

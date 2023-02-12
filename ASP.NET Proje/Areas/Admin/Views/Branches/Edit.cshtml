@@ -1,0 +1,29 @@
+﻿@model ASP.NET_Proje.Models.Branch
+
+@{
+    ViewData["Title"] = "Edit";
+
+}
+
+
+<div class="container p-5">
+    <h2 class="text-light">Edit Branch</h2>
+    <div class="form-group">
+        <form method="post" asp-action="Edit">
+            <div class="form-group">
+                <label class="form-control">Store</label>
+                <input required asp-for="StoreId" class="form-control text-white" />
+            </div>
+            <div class="form-group">
+                <label class="form-control">Name</label>
+                <input required asp-for="Name" class="form-control text-white" />
+            </div>
+            <div class="form-group">
+                <label class="form-control">Description</label>
+                <input required asp-for="Description" class="form-control text-white" />
+            </div>
+            <input class="btn btn-outline-light" type="submit" value="Edit" />
+        </form>
+    </div>
+</div>
+

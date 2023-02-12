@@ -1,0 +1,26 @@
+﻿@model ASP.NET_Proje.Models.Entity.OrderItem
+
+@{
+    ViewData["Title"] = "Create";
+ 
+}
+<div class="container p-5">
+    <h2 class="text-light">Create OrderItem</h2>
+    <div class="form-group">
+        <form method="post" asp-action="Create">
+            <div class="form-group">
+                <label class="form-control">Order</label>
+                <input required asp-for="OrderId" class="form-control text-white" />
+            </div>
+            <div class="form-group">
+                <label class="form-control">ProductId</label>
+                <input required asp-for="ProductId" class="form-control text-white" />
+            </div>
+            <div class="form-group">
+                <label class="form-control">ProductCount</label>
+                <input required asp-for="ProductCount" class="form-control text-white" />
+            </div>
+            <input class="btn btn-outline-light" type="submit" value="Save" />
+        </form>
+    </div>
+</div>

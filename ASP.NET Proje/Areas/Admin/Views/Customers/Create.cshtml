@@ -1,0 +1,35 @@
+﻿@model ASP.NET_Proje.Models.Entity.Customer
+
+@{
+    ViewData["Title"] = "Create";
+ 
+}
+
+<div class="container p-5">
+    <h2 class="text-light">Create Customer</h2>
+    <div class="form-group">
+        <form method="post" asp-action="Create">
+            <div class="form-group">
+                <label class="form-control">Name</label>
+                <input required asp-for="Name" class="form-control text-white" />
+            </div>
+            <div class="form-group">
+                <label class="form-control">SurName</label>
+                <input required asp-for="SurName" class="form-control text-white" />
+            </div>
+            <div class="form-group">
+                <label class="form-control">Gender</label>
+                <input required asp-for="Gender" class="form-control text-white" />
+            </div>
+            <div class="form-group">
+                <label class="form-control">Address</label>
+                <input required asp-for="Address" class="form-control text-white" />
+            </div>
+            <div class="form-group">
+                <label class="form-control">Description</label>
+                <input required asp-for="Description" class="form-control text-white" />
+            </div>
+            <input class="btn btn-outline-light" type="submit" value="Save" />
+        </form>
+    </div>
+</div>

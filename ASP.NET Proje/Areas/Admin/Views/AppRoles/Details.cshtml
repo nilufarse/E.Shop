@@ -1,0 +1,18 @@
+﻿@model ASP.NET_Proje.Models.Identity.AppRole
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container p-5">
+    <h2 class="text-light">Details Role</h2>
+    <div class="form-group">
+        <form method="post" asp-action="Details">
+            <div class="form-group">
+                <label class="form-control">Name</label>
+                <input required asp-for="Name" class="form-control text-white" />
+            </div>
+            <input class="btn btn-outline-light" type="submit" value="Details" />
+        </form>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+﻿@model Campaign
+@{
+    Layout = "_Layout";
+}
+
+<div class="container p-5">
+    <h2 class="text-light">Create Social</h2>
+
+
+    <div class="form-group">
+        <form >
+            <div class="form-group">
+                <label class="form-control">Name</label>
+                <input readonly asp-for="Name" class="form-control text-white" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-control">Discount</label>
+                <input readonly asp-for="Discount" class="form-control text-white" />
+            </div>
+            <div class="form-group">
+                <label class="form-control">Description</label>
+                <textarea readonly class="form-control" asp-for="Description"></textarea>
+            </div>
+         <a class="btn btn-secondary" asp-action="index">Back</a>
+        </form>
+    </div>
+
+</div>

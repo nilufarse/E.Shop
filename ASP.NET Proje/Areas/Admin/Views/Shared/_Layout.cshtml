@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/adminMain/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/adminMain/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+
+    <link rel="stylesheet" href="~/adminMain/css/style-admin.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="adminMain/images/favicon.png" />
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    @RenderSection("addcss", required: false)
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item profile">
+                    <div class="profile-desc">
+                        <div class="profile-pic">
+                        </div>
+                        <a href="#" id="profile-dropdown" data-toggle="dropdown"></a>
+                        <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
+                            <a href="#" class="dropdown-item preview-item">
+                                <div class="preview-item-content">
+                                    <p class="preview-subject ellipsis mb-1 text-small">Account settings</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item preview-item">
+                                <div class="preview-item-content">
+                                    <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item preview-item">
+                                <div class="preview-item-content">
+                                    <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" asp-controller="UserManagement" asp-action="EmplyoeeIndex">
+                        <span class="menu-title">Employee Users</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" asp-controller="UserManagement" asp-action="CustomerIndex">
+                        <span class="menu-title">Customer Users</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" asp-controller="sitemanaged" asp-action="index">
+                        <span class="menu-title">Product</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" data-toggle="collapse" asp-controller="gender" asp-action="index" aria-expanded="false" aria-controls="ui-basic">
+                        <span class="menu-title">Gender</span>
+                    </a>
+                    <div class="collapse" id="ui-basic">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" asp-controller="AppRoles" asp-action="index">
+                        <span class="menu-title">Role</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" asp-controller="Customers" asp-action="index">
+                        <span class="menu-title">Customer</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" asp-controller="Employees" asp-action="index">
+                        <span class="menu-title">Employee</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" asp-controller="Stores" asp-action="index">
+                        <span class="menu-title">Store</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" asp-controller="Branches" asp-action="index">
+                        <span class="menu-title">Branch</span>
+                    </a>
+                </li>
+                @*<li class="nav-item menu-items">
+                    <a class="nav-link" asp-controller="Orders" asp-action="index">
+                        <span class="menu-title">Order</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" asp-controller="OrderItems" asp-action="index">
+                        <span class="menu-title">Order Item</span>
+                    </a>
+                </li>*@
+            </ul>
+        </nav>
+   
+    <!-- partial -->
+    @RenderBody()
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="~/adminMain/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="~/adminMain/vendors/chart.js/Chart.min.js"></script>
+    <script src="~/adminMain/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="~/adminMain/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="~/adminMain/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/adminMain/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="~/adminMain/js/off-canvas.js"></script>
+    <script src="~/adminMain/js/hoverable-collapse.js"></script>
+    <script src="~/adminMain/js/misc.js"></script>
+    <script src="~/adminMain/js/settings.js"></script>
+    <script src="~/adminMain/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="~/adminMain/js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+    <script>
+        $("#answerd").click(function (e) {
+            var id = $(this).data('id');
+            console.log('clicked')
+            $.ajax({
+                type: 'POST',
+                url: `/admin/sitemanaged/ContactUpdates/${id}`,
+                success: function () {
+                    console.log('success');
+                    location.reload();
+                }
+
+            });
+        });
+
+
+        $("#deleteMesage").click(function (e) {
+            var id = $(this).data('id');
+            console.log('clicked')
+            $.ajax({
+                type: 'POST',
+                url: `/admin/sitemanaged/ContactDelete/${id}`,
+                success: function () {
+                    console.log('success');
+                    location.reload();
+                }
+
+
+
+
+
+            });
+        });
+
+
+        $('.custom-file-input').on('change', function () {
+            var fileName = $(this).val();
+            console.log(fileName);
+            readURL(this);
+
+
+
+
+        });
+
+
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+
+                    console.log(e.target.result);
+                    $('#plus').text("");
+                    $('#createdImage').css("display", "block");
+
+                    $('#createdImage').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+
+
+
+
+    </script>
+    @RenderSection("addjs", required: false)
+</body>
+</html>
